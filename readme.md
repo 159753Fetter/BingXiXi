@@ -20,20 +20,20 @@
 
 平台首页
 
-![1](img\fig1.png)
+![1](img/fig1.png)
 
 用户订单页面
 
-![2](img\fig2.png)
+![2](img/ig2.png)
 
 商品详情页面
 
-![3](img\fig3.png)
+![3](img/fig3.png)
 
 商家管理页面
 
-![fig4](img\fig4.png)
+![fig4](img/fig4.png)
 
-![fig5](img\fig5.png)
+![fig5](img/fig5.png)
 
 以上仅供参考，更多功能可自行尝试
