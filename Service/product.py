@@ -324,13 +324,11 @@ class ProductModel(dbSession, dbSessionread):
                 # 减少库存量
                 shop_id = product.shop_id
                 shop = session.query(Shop).filter(Shop.id == shop_id).first()
-                session.query(Product).filter(Product.id == obj_dict.get('product_id')).update({"stock": product.stock})
-                session.commit()
                 session.query(Shop).filter(Shop.id == shop_id).update({"sales_volume": shop.sales_volume + product.price})
                 session.commit()
 
                 product.stock -= buy_pro.number
-                session.query(Product).filter(Product.id == obj_dict.get('product_id')).update({"stock": product.stock})
+                session.query(Product).filter(Product.id == obj_dict.get('product_id'),Product.stock >= buy_pro.number).update({"stock": product.stock})
                 session.commit()
                 with self.get_db() as session:
                     session.query(Order).filter(Order.id == buy_pro.order_id, Order.user_id == buy_pro.user_id).update({"status": 1})
